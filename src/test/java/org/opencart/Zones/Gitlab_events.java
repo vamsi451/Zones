@@ -1,16 +1,5 @@
 package org.opencart.Zones;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.JavascriptExecutor;
-
-
-
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -18,13 +7,18 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class Gitlab_events{
 
     public static void main(String[] args) {
         // Set up Firefox WebDriver (adjust the path to geckodriver accordingly)
         //System.setProperty("webdriver.gecko.driver", "/path/to/geckodriver");
         WebDriver driver = new FirefoxDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Explicit wait
         
         try {
             // Navigate to the GitLab Events page
@@ -41,7 +35,7 @@ public class Gitlab_events{
                 try {
                     // Extract date and event name
                     String dateText = card.findElement(By.className("event-card__dates")).getText();
-                    String eventName = card.findElement(By.className("slp-text-align-left")).getText(); // Adjust based on actual class for event names
+                    String eventName = card.findElement(By.className("slp-text-align-left")).getText(); 
 
                     // Use regular expression to extract dates
                     Pattern pattern = Pattern.compile("(\\w+ \\d{1,2}, \\d{4})");
@@ -59,8 +53,7 @@ public class Gitlab_events{
                                 System.out.println("Event Name: " + eventName + ", Date: " + eventDate);
                                 
                                 // Click the event link
-                                WebElement joinButton = card.findElement(By.className("slp-btn-primary")); // Adjust based on actual class for join button
-                                
+                                WebElement joinButton = card.findElement(By.className("slp-btn-primary")); 
                                 // Open link in a new tab
                                 String joinButtonUrl = joinButton.getAttribute("href");
                                 String script = "window.open(arguments[0], '_blank');";
@@ -76,7 +69,7 @@ public class Gitlab_events{
             }
         } finally {
             // Close the WebDriver
-            //driver.quit();
+            driver.quit();
         }
     }
 }
