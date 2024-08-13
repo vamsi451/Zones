@@ -1,5 +1,8 @@
 package org.opencart.Zones;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,14 +10,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.List;
-
 public class SeleniumHQ {
     public static void main(String[] args) {
 
         // Initialize WebDriver (Firefox)
-      //  System.setProperty("webdriver.gecko.driver", "C:\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -65,7 +64,6 @@ public class SeleniumHQ {
 
         } catch (Exception e) {
             System.err.println("An error occurred:");
-            e.printStackTrace();
         } finally {
             // Close the browser
             driver.quit();

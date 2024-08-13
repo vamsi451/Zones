@@ -1,20 +1,15 @@
 package org.opencart.Zones;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SonarQube {
     public static void main(String[] args) {
-        // Set the path to the Firefox driver executable
-        //System.setProperty("webdriver.gecko.driver", "/path/to/geckodriver");
-
+        
         // Initialize the Firefox WebDriver
         WebDriver driver = new FirefoxDriver();
 
