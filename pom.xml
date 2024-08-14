@@ -49,6 +49,12 @@
             <artifactId>logback-classic</artifactId>
             <version>1.4.9</version>
         </dependency>
+        <dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.7.0</version> <!-- Check for the latest version -->
+</dependency>
+
         <!-- Hamcrest for matchers -->
         <dependency>
             <groupId>org.hamcrest</groupId>
