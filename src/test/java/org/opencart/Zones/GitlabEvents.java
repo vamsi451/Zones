@@ -15,27 +15,36 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class GitlabEvents{
+public class GitlabEvents {
     private WebDriver driver;
     private WebDriverWait wait;
     private ConfigReader configReader;
 
     @BeforeClass
-    public void setUp() {
-        // Initialize ConfigReader
-        configReader = new ConfigReader("config.properties");
+public void setUp() {
+    // Initialize ConfigReader
+    configReader = new ConfigReader("Config.properties");
 
-        // Set up Firefox WebDriver
-        driver = new FirefoxDriver();
-        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-
-        // Navigate to the GitLab Events page
-        driver.get(configReader.getProperty("gitlab.events.url"));
+    // Get the GitLab events URL
+    String url = configReader.getProperty("gitlab.events.url");
+    if (url == null || url.isEmpty()) {
+        throw new IllegalStateException("URL property is not set or is empty.");
     }
+
+    // Set up Firefox WebDriver
+    driver = new FirefoxDriver();
+    wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+    // Navigate to the GitLab Events page
+    driver.get(url);
+}
+
+    
 
     @Test
     public void testEventDates() {
@@ -45,6 +54,8 @@ public class GitlabEvents{
 
         // Get today's date
         LocalDate today = LocalDate.now();
+
+        boolean eventFound = false;  // Flag to track if any valid event was found
 
         for (WebElement card : eventCards) {
             try {
@@ -74,6 +85,8 @@ public class GitlabEvents{
                             // Open link in a new tab
                             String script = "window.open(arguments[0], '_blank');";
                             ((JavascriptExecutor) driver).executeScript(script, joinButtonUrl);
+
+                            eventFound = true;  // Set flag to true if a valid event is found
                         }
                     } catch (DateTimeParseException e) {
                         System.out.println("Date parsing error for text: " + extractedDate);
@@ -83,6 +96,9 @@ public class GitlabEvents{
                 System.out.println("Error processing card: " + e.getMessage());
             }
         }
+
+        // Assert that at least one valid event was found
+        Assert.assertTrue(eventFound, "No valid events found that are more than 2 days away from today.");
     }
 
     @AfterClass
@@ -92,4 +108,3 @@ public class GitlabEvents{
         }
     }
 }
-
