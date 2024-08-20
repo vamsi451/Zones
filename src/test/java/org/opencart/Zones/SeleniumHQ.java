@@ -1,9 +1,14 @@
 package org.opencart.Zones;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +17,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+
+//import com.google.common.io.Files; // Import the Files utility from Guava
 
 public class SeleniumHQ {
     private WebDriver driver;
@@ -34,14 +42,17 @@ public class SeleniumHQ {
         }
         driver.get(url);
         Assert.assertEquals(driver.getCurrentUrl(), url, "URL did not match!");
+
+        // Take a screenshot of the initial page
+        takeScreenshot("initial_page.png");
     }
 
     @Test
     public void testPullRequestTitles() {
-        // Click on the "Pull Requests" tab and assert that it is selected
+       // Click on the "Pull Requests" tab and assert that it is selected
         WebElement pullRequestsTab = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='pull-requests-tab']")));
         pullRequestsTab.click();
-        //Assert.assertTrue(pullRequestsTab.getAttribute("aria-selected").equals("true"), "Pull Requests tab was not selected!");
+        // Assert.assertTrue(pullRequestsTab.getAttribute("aria-selected").equals("true"), "Pull Requests tab was not selected!");
 
         boolean hasNextPage = true;
         int pageCount = 0;
@@ -60,6 +71,9 @@ public class SeleniumHQ {
                 Assert.assertFalse(titleText.isEmpty(), "Found an empty pull request title!");
                 System.out.println(titleText);
             }
+
+            // Take a screenshot of the current page
+            takeScreenshot("page_" + (pageCount + 1) + ".png");
 
             try {
                 // Attempt to click the "Next" page button and assert that it worked
@@ -80,6 +94,33 @@ public class SeleniumHQ {
 
     @AfterClass
     public void tearDown() {
+        // Take a final screenshot before closing the browser
+        takeScreenshot("final_page.png");
         browserManager.quitDriver();
     }
+
+    private void takeScreenshot(String fileName) {
+        // Get the screenshot path from the configuration file
+        String screenshotPath = configReader.getProperty("screenshot.path");
+        if (screenshotPath == null || screenshotPath.isEmpty()) {
+            throw new RuntimeException("Screenshot path is not set or is empty in the configuration file.");
+        }
+    
+        // Create the full path by combining the directory path and the file name
+        File screenshotFile = new File(screenshotPath, fileName);
+    
+        // Take the screenshot and save it to the specified location
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            // Ensure that the directory exists
+            Files.createDirectories(screenshotFile.getParentFile().toPath());
+    
+            // Save the screenshot to the specified file
+            Files.copy(screenshot.toPath(), screenshotFile.toPath());
+            System.out.println("Screenshot saved to: " + screenshotFile.getAbsolutePath());
+        } catch (IOException e) {
+            System.err.println("Failed to save screenshot: " + e.getMessage());
+        }
+    }
+    
 }

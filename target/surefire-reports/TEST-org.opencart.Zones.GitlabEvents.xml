@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.opencart.Zones.GitlabEvents" time="26.604" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.opencart.Zones.GitlabEvents" time="15.29" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240813142010538_3.jar /Users/testvagrant/Zones/target/surefire 2024-08-13T14-20-10_473-jvmRun1 surefire-20240813142010538_1tmp surefire_0-20240813142010538_2tmp"/>
+    <property name="sun.java.command" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240820104324913_3.jar /Users/testvagrant/Zones/target/surefire 2024-08-20T10-43-24_864-jvmRun1 surefire-20240820104324913_1tmp surefire_0-20240820104324913_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="org.opencart.Zones.GitlabEvents"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240813142010538_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240820104324913_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.4+7-LTS"/>
@@ -61,11 +61,9 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testEventDates" classname="org.opencart.Zones.GitlabEvents" time="10.965">
+  <testcase name="testEventDates" classname="org.opencart.Zones.GitlabEvents" time="1.653">
     <system-out><![CDATA[Property gitlab.events.url: https://about.gitlab.com/events/
 Event Name: Mastering Source Code Management (SCM), Date: 2024-10-09
-Event Name: CISO Singapore, Date: 2024-08-20
-Event Name: CISO Singapore, Date: 2024-08-21
 Event Name: GitLab Hackathon, Date: 2024-08-26
 Event Name: GitLab Hackathon, Date: 2024-09-01
 Event Name: CISO Brisbane, Date: 2024-08-27
@@ -73,8 +71,10 @@ Event Name: GitLab CI Workshop, Date: 2024-08-28
 Event Name: Simplifying the Security Vulnerability Lifecycle, Date: 2024-08-29
 Event Name: Integrating Custom Security Solutions with GitLab, Date: 2024-08-29
 Event Name: Security + Compliance Workshop, Date: 2024-09-17
+Event Name: DevOpsDays Tampa, Date: 2024-09-19
 Event Name: GitLab DACH Roadshow Stop Duesseldorf, Date: 2024-09-24
 Event Name: Streamline CI/CD Pipeline Creation with GitLab's CI/CD Catalog, Date: 2024-09-24
+Event Name: Thought Leadership Webcast: Essential DevOps Security Best Practices, Date: 2024-09-26
 Event Name: DevOps Summit Singapore, Date: 2024-09-26
 Event Name: Open Source in Finance Forum - New York, Date: 2024-09-30
 Event Name: Open Source in Finance Forum - New York, Date: 2024-10-01
@@ -90,6 +90,7 @@ Event Name: Boston Cybersecurity Summit, Date: 2024-10-29
 Event Name: GitLab DACH Roadshow Stop Berlin, Date: 2024-10-29
 Event Name: KubeCon + CloudNativeCon North America 2024, Date: 2024-11-12
 Event Name: KubeCon + CloudNativeCon North America 2024, Date: 2024-11-15
+Event Name: GBI CIO Flagship Conference - San Francisco, Date: 2024-12-04
 ]]></system-out>
   </testcase>
 </testsuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.opencart.Zones.SeleniumHQ" time="11.381" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.opencart.Zones.SeleniumHQ" time="15.088" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240814130227065_3.jar /Users/testvagrant/Zones/target/surefire 2024-08-14T13-02-26_999-jvmRun1 surefire-20240814130227065_1tmp surefire_0-20240814130227065_2tmp"/>
+    <property name="sun.java.command" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240820111247805_3.jar /Users/testvagrant/Zones/target/surefire 2024-08-20T11-12-47_757-jvmRun1 surefire-20240820111247805_1tmp surefire_0-20240820111247805_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="org.opencart.Zones.SeleniumHQ"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240814130227065_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/testvagrant/Zones/target/surefire/surefirebooter-20240820111247805_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.4+7-LTS"/>
@@ -62,26 +62,29 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testPullRequestTitles" classname="org.opencart.Zones.SeleniumHQ" time="2.764">
-    <system-out><![CDATA[13:02:27.545 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager -- Using WebDriverManager 5.7.0
-13:02:27.750 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache -- Resolution firefox=129 in cache (valid until 14:01:27 14/08/2024 IST)
-13:02:27.751 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache -- Resolution firefox129=0.35.0 in cache (valid until 12:08:10 15/08/2024 IST)
-13:02:27.751 [main] INFO io.github.bonigarcia.wdm.WebDriverManager -- Using geckodriver 0.35.0 (resolved driver for Firefox 129)
-13:02:27.763 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager -- Driver geckodriver 0.35.0 found in cache
-13:02:27.763 [main] INFO io.github.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as /Users/testvagrant/.cache/selenium/geckodriver/mac-arm64/0.35.0/geckodriver
+  <testcase name="testPullRequestTitles" classname="org.opencart.Zones.SeleniumHQ" time="4.527">
+    <system-out><![CDATA[11:12:48.360 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager -- Using WebDriverManager 5.7.0
+11:12:48.614 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache -- Resolution firefox=129 in cache (valid until 11:57:10 20/08/2024 IST)
+11:12:48.615 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache -- Resolution firefox129=0.35.0 in cache (valid until 10:57:10 21/08/2024 IST)
+11:12:48.615 [main] INFO io.github.bonigarcia.wdm.WebDriverManager -- Using geckodriver 0.35.0 (resolved driver for Firefox 129)
+11:12:48.631 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager -- Driver geckodriver 0.35.0 found in cache
+11:12:48.631 [main] INFO io.github.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.gecko.driver as /Users/testvagrant/.cache/selenium/geckodriver/mac-arm64/0.35.0/geckodriver
 Property github.selenium.url: https://github.com/SeleniumHQ/selenium
+Property screenshot.path: /Users/testvagrant/Zones/target/maven-archiver/Screenshots
+Screenshot saved to: /Users/testvagrant/Zones/target/maven-archiver/Screenshots/initial_page.png
 Pull request titles on page 1:
-Modern Modal
-Bug 14229 fixed
-[rust] Use the Debug format specifier to display error messages
+[dotnet][rb][java][js][py] Automated Browser Version Update
+[grid] limit the number of websocket connections per session
+[grid] enable the httpclient to perform async requests #14403
+[java] JSpecify annotations for capabilities
+[java] JSpecify annotations for wrappers
+[java] JSpecify annotations for immutable models and enums
 [bidi][js] Allow passing in uri for authentication handlers
 chore(deps): update dependency mocha to v10.7.3
 [rust] Selenium Manager errors when browser-path is wrong (#13352)
 [ci] Use a tag to figure out what we might want to release
 [py] Support move_to_location on action_chains
-[dotnet][rb][java][js][py] Automated Browser Version Update
 [java] JSpecify annotations for By locators
-[java] Add JSpecify annotations for WebDriver and 3 other interfaces
 New Expected Condition elements_not_overlapping
 Fixed bug #13642 related to relative locators
 [bidi][java] Add execute script high-level API
@@ -95,8 +98,10 @@ Add ENV variables for path
 Add timeout and tests for curb, also added the gem curb that was not part of selenium
 [rb] create user-friendly method for enabling bidi
 [py] Typing package import enhancement
-[py] fix docs to use build instead of update in python
+Property screenshot.path: /Users/testvagrant/Zones/target/maven-archiver/Screenshots
+Screenshot saved to: /Users/testvagrant/Zones/target/maven-archiver/Screenshots/page_1.png
 Pull request titles on page 2:
+[py] fix docs to use build instead of update in python
 [py] Feature 12760 for python service properties
 [py] moved isort, black and docformatter settings from tox.ini file to pyproject.toml
 [py] moved flake8 and pytest config settings from setup.cfg to pyproject.toml
@@ -109,8 +114,8 @@ Update Ruby BiDi script structs to match spec (as of 2024-07-08)
 Cleaned up Py doc sphinx warnings/errors and added README
 Deps: bumps ws version which patches a security vulnerability
 [java] increasing of properties scope for better appium compatibility
+fix(deps): update rust crate reqwest to v0.12.7
 Fix typing in remote webdriver
-Implement getAttributes() method of MBean, and update Number-based MBean attributes to return Number objects instead of Strings
 chore(deps): update dependency @testing-library/jest-dom to v6.4.8
 fix(deps): update dependency @apollo/client to v3.11.4
 [java] case insensitive header names in http requests
@@ -119,10 +124,12 @@ Add clickDialogButton methods for FedCM
 Fix FedCM command definition
 [dotnet] implement WebDriver BiDi with WebDriverBiDi dependency
 chore(deps): update dependency eslint-plugin-n to v17.10.2
-chore(deps): update dependency esbuild to v0.23.0
+chore(deps): update dependency esbuild to v0.23.1
 Update dependency Sphinx to v1.8.6 - abandoned
-really drop python<=3.7 support
+Property screenshot.path: /Users/testvagrant/Zones/target/maven-archiver/Screenshots
+Screenshot saved to: /Users/testvagrant/Zones/target/maven-archiver/Screenshots/page_2.png
 Pull request titles on page 3:
+really drop python<=3.7 support
 [java] remove guava from client bindings #12737
 fix: For security purposes, remove the output of Capabilities information from the logs.
 [py] Format the code using black
@@ -141,6 +148,8 @@ Create Client config class for http client values
 [rb][bidi] network module events
 [rb][BiDi] Add Script module commands and types
 [wip][py] Expose browser specific functionalities for remote webdrivers
+Property screenshot.path: /Users/testvagrant/Zones/target/maven-archiver/Screenshots
+Screenshot saved to: /Users/testvagrant/Zones/target/maven-archiver/Screenshots/page_3.png
 No more pages to navigate.
 ]]></system-out>
   </testcase>
