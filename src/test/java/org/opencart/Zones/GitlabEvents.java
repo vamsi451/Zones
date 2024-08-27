@@ -21,8 +21,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.epam.healenium.SelfHealingDriver;
+
 public class GitlabEvents {
-    private WebDriver driver;
+    private SelfHealingDriver driver;
     private WebDriverWait wait;
     private ConfigReader configReader;
 
@@ -38,7 +40,8 @@ public void setUp() {
     }
 
     // Set up Firefox WebDriver
-    driver = new FirefoxDriver();
+    WebDriver Delegate = new FirefoxDriver();
+    driver = SelfHealingDriver.create(Delegate);
     wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     // Navigate to the GitLab Events page

@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserManager {
-    private WebDriver driver;
+    final WebDriver driver;
 
     public BrowserManager() {
         // Set up WebDriver Manager
