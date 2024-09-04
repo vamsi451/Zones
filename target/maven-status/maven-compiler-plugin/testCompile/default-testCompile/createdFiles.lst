@@ -1,0 +1,10 @@
+org/opencart/Zones/LengthOfLastWord.class
+org/opencart/Zones/BrowserManager.class
+org/opencart/Zones/SeleniumHQ.class
+org/opencart/Zones/ConfigReader.class
+org/opencart/Zones/GitlabEvents.class
+org/opencart/Zones/simple1.class
+org/opencart/Zones/TestRunner.class
+org/opencart/Zones/SimpleTestSteps.class
+org/opencart/Zones/simple.class
+org/opencart/Zones/SonarQube.class

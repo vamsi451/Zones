@@ -28,7 +28,7 @@ public class simple {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Open the HTML page
-        driver.get("file:///Users/testvagrant/Zones/src/test/java/org/opencart/Zones/simple.html");
+        driver.get("file:///Users/testvagrant/Zones/src/test/java/org/opencart/Zones/simple2.html");
     }
 
     @Test

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e8f0fe;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            width: 100%;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 25px;
+            font-size: 20px;
+            color: #333;
+        }
+        #char-count {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Interactive Test Page</h1>
+
+    <!-- Input field for text entry -->
+    <input type="text" id="text-input54" placeholder="Enter some text">
+
+    <!-- Character count display -->
+    <div id="char-count343">Character count: 0</div>
+    <!-- XPath: //div[@id='char-count'] -->
+    <!-- CSS Selector: #char-count -->
+
+    <!-- Submit button -->
+    <button id="submit-btn11">Submit</button>
+    <!-- XPath: //button[@id='submit-btn'] -->
+    <!-- CSS Selector: #submit-btn -->
+
+    <!-- Reset button -->
+    <button id="reset-btn333" style="background-color: #dc3545;">Reset</button>
+    <!-- XPath: //button[@id='reset-btn'] -->
+    <!-- CSS Selector: #reset-btn -->
+
+    <!-- Div to display the result -->
+    <div id="result11"></div>
+    <!-- XPath: //div[@id='result'] -->
+    <!-- CSS Selector: #result -->
+
+    <script>
+        const inputField = document.getElementById('text-input54');
+        const charCountDiv = document.getElementById('char-count343');
+        const resultDiv = document.getElementById('result11');
+        const submitBtn = document.getElementById('submit-btn11');
+        const resetBtn = document.getElementById('reset-btn333');
+
+        // Update character count on input
+        inputField.addEventListener('input', function() {
+            const inputLength = inputField.value.length;
+            charCountDiv.textContent = "Character count: " + inputLength;
+
+            // Change result color based on length
+            if (inputLength > 10) {
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.style.color = '#333';
+            }
+        });
+
+        // Display input text on submit
+        submitBtn.addEventListener('click', function() {
+            const inputText = inputField.value;
+            resultDiv.textContent = "You entered: " + inputText;
+        });
+
+        // Reset input field and result div
+        resetBtn.addEventListener('click', function() {
+            inputField.value = '';
+            resultDiv.textContent = '';
+            charCountDiv.textContent = "Character count: 0";
+            resultDiv.style.color = '#333';
+        });
+    </script>
+
+</div>
+</body>
+</html>
